@@ -3,9 +3,7 @@
 Console.WriteLine("Enter your number");
 int a = Convert.ToInt32(Console.ReadLine());
 
-int b = a % 2;
-
-if (b == 0)
+if (a % 2 == 0)
 {
     Console.WriteLine("Yes! Number is even!");
 }
