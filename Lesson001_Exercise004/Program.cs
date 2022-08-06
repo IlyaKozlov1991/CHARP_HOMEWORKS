@@ -1,4 +1,4 @@
-﻿// Receive two numbers and find max
+﻿// Receive three numbers and find max
 
 Console.WriteLine("Enter first number: ");
 int a = Convert.ToInt32(Console.ReadLine());
