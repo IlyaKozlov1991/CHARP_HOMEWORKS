@@ -5,9 +5,9 @@ int a = Convert.ToInt32(Console.ReadLine());
 
 int b = a % 2;
 
-if (b > 0)
+if (b == 0)
 {
-    Console.WriteLine("No! Number is odd!");
+    Console.WriteLine("Yes! Number is even!");
 }
 else
-Console.WriteLine("Yes! Number is even!");
+Console.WriteLine("No! Number is odd!");
