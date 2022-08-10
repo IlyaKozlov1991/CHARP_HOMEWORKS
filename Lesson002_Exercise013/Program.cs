@@ -5,4 +5,9 @@ Console.WriteLine("Enter your number: ");
 string InputStr = Console.ReadLine();
 Char[] UserNumber = InputStr.ToCharArray();
 
-Console.Write("second digit is: " + UserNumber[2]);
+if (UserNumber.Length == 3)
+{
+    Console.Write("third digit is: " + UserNumber[2]);
+}
+else
+    Console.WriteLine("No 3rd digit");
