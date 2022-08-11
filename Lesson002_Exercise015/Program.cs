@@ -16,3 +16,19 @@ if (UserNumber == 6 | UserNumber == 7)
 }
 else
     Console.WriteLine("No ");
+
+if (UserNumber == 6 | UserNumber == 7)
+{
+    Console.WriteLine("Do you want to know what day is it today? 1-YES 0-NO"); // Ask User if he wants to know in case of weekend
+    int UserAnswer = Convert.ToInt32(Console.ReadLine());
+    if (UserAnswer ==1 )
+    {
+    if (UserNumber == 6)
+    {
+        Console.WriteLine("Today is Saturday");
+    }
+    else
+    Console.WriteLine("Today is Sunday");
+    }
+}
+
