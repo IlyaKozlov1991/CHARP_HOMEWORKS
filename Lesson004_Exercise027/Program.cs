@@ -1,16 +1,19 @@
 ﻿// Receive a number and show sum of all its numbers
 
-Console.WriteLine("Entre Your number");
+Console.WriteLine("Enter Your number"); // Number request
 
-string NumbStr = Console.ReadLine();
-string[] TempStr = new string[NumbStr.Length];
+string NumbStr = Console.ReadLine(); // Number is received from user
 
-int[] NumbArr = new int[NumbStr.Length];
-int counter = 0;
+Char[] NumbAr = new Char[NumbStr.Length]; // Line 7-8 Number is moved to Char format
+NumbAr = NumbStr.ToArray(); 
+int MyNumb = 0; // Temporary variable for further convertation
+int Result = 0;
+Array[] TempArr = new Array[NumbAr.Length]; // Temporary array for further convertation
 
-for (int i = 0; i < NumbStr.Length; i++)
+for (int i = 0; i < NumbAr.Length; i++)
 {
-    TempArr[i] = NumbStr.Substring(counter, 1);
-    counter++;
+    MyNumb = NumbAr[i] - '0'; // Convertation from ASCII to int has been implemented because Char is used
+    Result += MyNumb;
 }
-Console.WriteLine()
+
+Console.WriteLine($"Your Sum is: {Result}");
