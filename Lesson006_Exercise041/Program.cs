@@ -2,6 +2,7 @@
 
 Console.WriteLine("Start of the Programm");
 Console.WriteLine("...");
+Console.WriteLine();
 Console.WriteLine("Enter Your Numbers using SAPCE");
 
 string NumberStr = Console.ReadLine();
@@ -11,6 +12,7 @@ int[] NumberArray = new int[SecondStr.Length];
 int Index = 0;
 int Count =0;
 
+Console.WriteLine();
 Console.WriteLine("Your numbers: ");
 
 foreach (var i in SecondStr)
@@ -29,3 +31,4 @@ foreach (var i in SecondStr)
 }
 Console.WriteLine("\n");
 Console.WriteLine($"You entered {Count} numbers bigger than 0");
+Console.WriteLine();
