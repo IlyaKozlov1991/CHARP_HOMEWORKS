@@ -19,9 +19,21 @@ double B2 = double.Parse(Console.ReadLine());
 Console.WriteLine("Enter K2:");
 double K2 = double.Parse(Console.ReadLine());
 
-double X = 0;
-Y1 = K1 * X + B1;
-Y2 = K2 * X + B2;
+double X = 1;
+
+static double FindY1(double K1, double B1, double X)
+{
+    double NewY1 = K1 * X + B1;
+    return NewY1; 
+}
+static double FindY2(double K2, double B2, double X)
+{
+    double NewY2 = K2 * X + B2;
+    return NewY2; 
+}
+
+Y1 = FindY1(K1, B1, X);
+Y2 = FindY2(K2, B2, X);
 
 if (Y1 - Y2 == 0)
 {
@@ -29,9 +41,9 @@ if (Y1 - Y2 == 0)
 }
 else
 {
-    X = Math.Round(((B2 - B1) / (K1 - K2)), 1);
-    Y1 = K1 * X + B2;
-    Y2 = K2 * X + B2;
+    X = Math.Round(((B2 - B1) / (K1 - K2)), 2);
+    Y1 = FindY1(K1, B1, X);
+    Y2 = FindY2(K2, B2, X);
     Console.WriteLine();
-    Console.WriteLine($"Coordinates of cross point are: ({X}, {Math.Round(Y2, 1)})");
+    Console.WriteLine($"Coordinates of cross point are: ({X}, {Math.Round(Y2, 2)})");
 }
