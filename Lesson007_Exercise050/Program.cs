@@ -19,12 +19,13 @@ int[,] MyArray = new int[M, N];
     {
         for (int j = 0; j < N; j++)
         {
-        MyArray[i, j] = new Random().Next(-20, 20);
+        MyArray[i, j] = new Random().Next(-100, 100);
         Console.Write($"{MyArray[i, j]} ");
         }
     Console.WriteLine();
     }
 
+Console.WriteLine();
 Console.WriteLine("Enter Index I:");
 int IndexI = Convert.ToInt32(Console.ReadLine());
 
@@ -33,9 +34,11 @@ int IndexJ = Convert.ToInt32(Console.ReadLine());
 
 if (IndexI < M & IndexJ < N)
 {
-    Console.WriteLine(MyArray[IndexI, IndexJ]);
+    Console.WriteLine();
+    Console.WriteLine($"Desired element is: {MyArray[IndexI, IndexJ]}");
 }
 else
 {
+    Console.WriteLine();
     Console.WriteLine("Such element doesn't exist in the Array");
 }
