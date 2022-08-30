@@ -25,44 +25,17 @@ for (int i = 0; i < M; i++)
     Console.WriteLine();
     }
 
-int NewI = 0;
-int NewJ = 0;
-decimal Result = 0;
-decimal Sum = MyArray[NewI, NewJ];
- 
-while (NewI < M && NewJ < N)
+for (int j = 0; j < MyArray.GetLength(1); j++) // GetLength(1) - returns number of columns in array
 {
-    if (NewJ == 0)
-    {
-    while (NewI != M - 1 && NewJ != N - 1)
-        {
-            for (int i = 0; i < M - 1; i++)
-            {
-            Result = Sum;
-            Sum = Result + MyArray[NewI + 1, NewJ];
-            NewI++;
-            }
-        Console.Write("Average sum of each column:" + " " + Math.Round(Sum/M, 1) + " ");
-        }
-        NewJ++;
-    }
-    else
-    {
-        NewI = 0;
-        Result = 0;
-        Sum = MyArray[NewI, NewJ];
-        while (NewI != M - 1 && NewJ != N- - 1)
-        {
-            for (int k = 0; k < M - 1; k++)
-                {
-                Result = Sum;
-                Sum = Result + MyArray[NewI + 1, NewJ];
-                NewI++;
-                } 
-            Console.Write(Math.Round(Sum/M, 1) + " ");
-            NewJ++;
-    }
-    }
+double Sum = 0; //Container to sum elements of a column
+
+for (int i = 0; i < MyArray.GetLength(0); i++) // GetLength(0) - returns number of strings in array
+{
+    Sum = Sum + MyArray[i, j];
+}
+    double Average = 0; 
+Average = Sum / MyArray.GetLength(0); //Average
+System.Console.WriteLine($"Average sum of elements in column {j}: {Average}");
 }
 
 
