@@ -40,7 +40,7 @@ void WriteMyArray(int[,] array)
 WriteMyArray(MyArray);
 
     Console.WriteLine();
-    int[] Sum = new int[MyArray.GetLength(1)];
+    int[] Sum = new int[MyArray.GetLength(0)];
     for (int i = 0; i < MyArray.GetLength(0); i++)
     {
         for (int j = 0; j < MyArray.GetLength(1); j++)
