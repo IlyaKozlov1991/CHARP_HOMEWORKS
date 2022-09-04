@@ -29,6 +29,23 @@ void WriteMyArray(int[,] array)
     }
 }
 
+void MultiplyMatrix(int[,] matrix1, int[,] matrix2, int[,] matrix3)
+{
+    for (int i = 0; i < matrix3.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix3.GetLength(1); j++)
+        {
+            int TempSum = 0;
+            for (int k = 0; k < matrix3.GetLength(1); k++)
+            {
+                TempSum += matrix1[i,k] * matrix2[k, j];
+            }
+            matrix3[i, j] = TempSum;
+        }
+        Console.WriteLine();
+    }
+}
+
 Console.WriteLine("Matrix A:\n");
 
 int[,] MatrixA = new int[M, N];
@@ -57,26 +74,8 @@ int[,] MatrixB = new int[R, S];
     }
 WriteMyArray(MatrixB);
 
-Console.WriteLine();
-
 int[,] MatrixResult = new int[MatrixA.GetLength(0), MatrixA.GetLength(1)];
 
-void MultiplyMatrix(int[,] matrix1, int[,] matrix2, int[,] matrix3)
-{
-    for (int i = 0; i < matrix3.GetLength(0); i++)
-    {
-        for (int j = 0; j < matrix3.GetLength(1); j++)
-        {
-            int TempSum = 0;
-            for (int k = 0; k < matrix3.GetLength(1); k++)
-            {
-                TempSum += matrix1[i,k] * matrix2[k, j];
-            }
-            MatrixResult[i, j] = TempSum;
-        }
-        Console.WriteLine();
-    }
-}
 
 if (MatrixA.GetLength(0) == MatrixB.GetLength(0) && MatrixA.GetLength(1) == MatrixB.GetLength(1))
 {
