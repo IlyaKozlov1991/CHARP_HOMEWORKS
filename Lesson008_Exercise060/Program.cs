@@ -28,5 +28,5 @@ int[,,] MyArray = new int[M, N, O];
         Console.WriteLine($" {MyArray[i, j, k]}({i}, {j}, {k})  ");
         }
         }
-    // Console.WriteLine();
     }
+Console.WriteLine();
