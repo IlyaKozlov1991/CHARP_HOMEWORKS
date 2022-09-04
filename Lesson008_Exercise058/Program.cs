@@ -2,11 +2,17 @@
 
 Console.WriteLine("Parameters of Matrixes are required");
 
-Console.WriteLine("Enter number of strings");
+Console.WriteLine("Enter number of strings for Matrix A");
 int M = Convert.ToInt32(Console.ReadLine());
 
 Console.WriteLine("Enter number of columns");
 int N = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Enter number of strings for Matrix B");
+int R = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Enter number of columns");
+int S = Convert.ToInt32(Console.ReadLine());
 
 Console.WriteLine("Start of the Programm");
 Console.WriteLine("...\n");
@@ -28,7 +34,7 @@ int[,] MatrixA = new int[M, N];
 Console.WriteLine();
 Console.WriteLine("Matrix B: \n");
 
-int[,] MatrixB = new int[M, N];
+int[,] MatrixB = new int[R, S];
 
     for (int i = 0; i < MatrixB.GetLength(0); i++)
     {
@@ -69,6 +75,6 @@ if (MatrixA.GetLength(0) == MatrixB.GetLength(0) && MatrixA.GetLength(1) == Matr
 }
 else
 {
-    Console.WriteLine("Dimensions of both matrix must be the same! Try again!");
+    Console.WriteLine("Impossible to multiply. Dimensions of both matrix must be equal. Try again!");
 }
 Console.WriteLine();
