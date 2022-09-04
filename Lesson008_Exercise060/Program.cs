@@ -24,7 +24,7 @@ int[,,] MyArray = new int[M, N, O];
         {
         for (int k = 0; k < MyArray.GetLength(2); k++)
         {
-        MyArray[i, j, k] = new Random().Next(1, 50);
+        MyArray[i, j, k] = new Random().Next(1, 50) + k;
         Console.WriteLine($" {MyArray[i, j, k]}({i}, {j}, {k})  ");
         }
         }
