@@ -17,7 +17,19 @@ int S = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Start of the Programm");
 Console.WriteLine("...\n");
 
-Console.WriteLine("Matrix A: \n");
+void WriteMyArray(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(String.Format("{0,-7}", array[i, j])); // For good look of output array
+        }
+        Console.WriteLine("\n");
+    }
+}
+
+Console.WriteLine("Matrix A:\n");
 
 int[,] MatrixA = new int[M, N];
 
@@ -26,13 +38,13 @@ int[,] MatrixA = new int[M, N];
         for (int j = 0; j < MatrixA.GetLength(1); j++)
         {
         MatrixA[i, j] = new Random().Next(1, 10);
-        Console.Write($" {MatrixA[i, j]}  ");
         }
-    Console.WriteLine();
+
     }
+WriteMyArray(MatrixA);
 
 Console.WriteLine();
-Console.WriteLine("Matrix B: \n");
+Console.WriteLine("Matrix B:\n");
 
 int[,] MatrixB = new int[R, S];
 
@@ -41,10 +53,9 @@ int[,] MatrixB = new int[R, S];
         for (int j = 0; j < MatrixB.GetLength(1); j++)
         {
         MatrixB[i, j] = new Random().Next(1, 10);
-        Console.Write($" {MatrixB[i, j]}  ");
         }
-    Console.WriteLine();
     }
+WriteMyArray(MatrixB);
 
 Console.WriteLine();
 
@@ -62,7 +73,6 @@ void MultiplyMatrix(int[,] matrix1, int[,] matrix2, int[,] matrix3)
                 TempSum += matrix1[i,k] * matrix2[k, j];
             }
             MatrixResult[i, j] = TempSum;
-            Console.Write($" {matrix3[i, j]}");
         }
         Console.WriteLine();
     }
@@ -70,8 +80,9 @@ void MultiplyMatrix(int[,] matrix1, int[,] matrix2, int[,] matrix3)
 
 if (MatrixA.GetLength(0) == MatrixB.GetLength(0) && MatrixA.GetLength(1) == MatrixB.GetLength(1))
 {
-    Console.WriteLine("Result Matrix: \n");
     MultiplyMatrix(MatrixA, MatrixB, MatrixResult);
+    Console.WriteLine("Result Matrix:\n");
+    WriteMyArray(MatrixResult);
 }
 else
 {

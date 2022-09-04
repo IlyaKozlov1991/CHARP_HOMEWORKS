@@ -8,8 +8,8 @@ int M = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Enter number of columns");
 int N = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine("Start of the Programm");
-Console.WriteLine("...");
+Console.WriteLine("\nStart of the Programm");
+Console.WriteLine("...\n");
 
 Console.WriteLine("Your Array: \n");
 
@@ -20,10 +20,24 @@ int[,] MyArray = new int[M, N];
         for (int j = 0; j < MyArray.GetLength(1); j++)
         {
         MyArray[i, j] = new Random().Next(1, 100);
-        Console.Write($" {MyArray[i, j]}  ");
+        // Console.Write($" {MyArray[i, j]}  ");
         }
-    Console.WriteLine();
+    // Console.WriteLine();
     }
+
+void WriteMyArray(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(String.Format("{0,-7}", array[i, j])); // For good look of output array
+        }
+        Console.WriteLine("\n");
+    }
+}
+
+WriteMyArray(MyArray);
 
     Console.WriteLine();
     int[] Sum = new int[MyArray.GetLength(1)];
@@ -32,8 +46,6 @@ int[,] MyArray = new int[M, N];
         for (int j = 0; j < MyArray.GetLength(1); j++)
         {
             Sum[i] = Sum[i] + MyArray[i, j];
-            // Console.WriteLine($"i: {i}");
-            // Console.WriteLine($"j: {j}");
         }
         Console.WriteLine($"Sum of string {i}: {Sum[i]}");
     }

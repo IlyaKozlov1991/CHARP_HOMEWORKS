@@ -8,24 +8,34 @@ int M = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Enter number of columns");
 int N = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine("Start of the Programm");
-Console.WriteLine("...");
+Console.WriteLine("\nStart of the Programm");
+Console.WriteLine("...\n");
 
-Console.WriteLine("Your Array:");
+Console.WriteLine("Your Array:\n");
 
 int[,] MyArray = new int[M, N];
+void WriteMyArray(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(String.Format("{0,-7}", array[i, j])); // For good look of output array
+        }
+        Console.WriteLine("\n");
+    }
+}
 
     for (int i = 0; i < MyArray.GetLength(0); i++)
     {
         for (int j = 0; j < MyArray.GetLength(1); j++)
         {
         MyArray[i, j] = new Random().Next(1, 100);
-        Console.Write($" {MyArray[i, j]}  ");
         }
-    Console.WriteLine();
     }
+WriteMyArray(MyArray);
 
-Console.WriteLine("Your array after formating: ");
+Console.WriteLine("\nYour array after formating: ");
 Console.WriteLine();
 
 for (int i = 0; i < MyArray.GetLength(0); i++)
@@ -40,9 +50,7 @@ for (int i = 0; i < MyArray.GetLength(0); i++)
                     MyArray[i, k + 1] = MyArray[i, k];
                     MyArray[i, k] = TempVar;
                 }
-                Console.Write($"{MyArray[i, k]} ");
             }
         }
-        Console.WriteLine();
     }
-    return;
+WriteMyArray(MyArray);
